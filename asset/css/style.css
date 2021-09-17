@@ -55,12 +55,21 @@ html {
 
 #nav .subnav {
     position: absolute;
-    /* display: none; */
+    box-shadow: 7px 10px 15px #ccc;
+    min-width: 160px;
+    display: none;
 }
 
 #nav .subnav a {
     color: #000;
-    
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav li i {
+    display: inline-block;
 }
 
 #slider{
