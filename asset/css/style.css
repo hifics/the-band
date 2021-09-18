@@ -11,10 +11,14 @@ html {
     clear: both;
 }
 
+.white-text {
+    color: #fff;
+}
+
 #main{
 
 }
-
+/* CSS  Header */
 #header{
     width: 100%;
     height: 46px;
@@ -168,9 +172,6 @@ html {
     overflow: hidden;
 }
 
-#container .member-name {
-    
-}
 
 #container .member-avatar {
     width: 154px;
