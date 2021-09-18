@@ -12,7 +12,7 @@ html {
 }
 
 .white-text {
-    color: #fff;
+    color: #fff !important;
 }
 
 #main{
@@ -179,6 +179,121 @@ html {
     border-radius: 4px;
 }
 
+#container .tour-section {
+    background-color: #000;
+}
+
+.ticket-list {
+    margin-top: 40px;
+}
+
+.ticket-list li {
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 16px 8px;
+    border-bottom: 1px solid rgb(221, 221, 221);;
+    color: #757575;
+    list-style-type: none;
+}
+
+.ticket-list .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    margin-left: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    
+}
+
+.ticket-list .remaining-ticket {
+    float: right;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+
+}
+
+.ticket-order-list{
+    margin-top: 20px;
+}
+
+.ticket-order{
+    background-color: #fff;
+    width: 33.33333%;
+    float: left;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.order-img{
+    vertical-align: middle;
+    width: 100%;
+}
+
+.order-img:hover{
+    opacity: 50%;
+}
+
+.order-content {
+    padding: 0 16px;
+    box-sizing: inherit;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.order-heading{
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.order-sub-heading{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #757575;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.order-description{
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+
+.order-btn{
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.order-btn:hover  {
+    background-color: #ccc;
+    color: #000;
+}
+
 #footer{
 
 }
+
+#ticketModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,40%);
+}
+
