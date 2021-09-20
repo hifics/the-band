@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Common */
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -15,6 +16,51 @@ html {
     color: #fff !important;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
+.col {
+    float: left;
+}
+.col-full {
+    width: 100%;
+}
+
+.col-half {
+    width: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third{
+    width: 33.33333%;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.mbt-16 {
+    margin-bottom: 16px !important;
+}
+
+/* Main */
 #main{
 
 }
@@ -28,11 +74,12 @@ html {
     box-sizing: inherit;
     overflow: hidden;
     -webkit-text-size-adjust: 100%;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 #nav {
     display: inline-block;
+    z-index: 1;
 }
 
 #nav, .subnav{
@@ -103,7 +150,7 @@ html {
     padding-top: 50%;
     background: url('/asset/images/chicago.jpg') top center / cover no-repeat;
     position: relative;
-    /* z-index: -1; */
+    z-index: -1;
 }
 
 #slider .text-slider {
@@ -130,6 +177,7 @@ html {
 
 #container .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 64px;
@@ -288,33 +336,141 @@ html {
 
 }
 
-#ticketModal {
+.modal {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,40%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open {
+    display: flex;
 }
 
 .modal-container{
+    padding-top: 100px;
+    width: 900px;
+    display: block;
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease .45s;  
 
 }
 
 .close-top-btn{
+    float: right;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    padding: 8px 16px;
+}
 
+.close-top-btn:hover {
+    color: #000;
+    background-color: #ccc;
 }
 
 .modal-header{
-
+    background-color: #009688;
+    color: #fff;
+    padding: 32px 16px;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-align: center;
 }
 
 .modal-content{
+    background-color: #fff;
+    display: block;
+    padding: 16px;
+    /* min-height: 340px; */
+}
+
+.modal-label  {
+    display: block;
+    /* margin: 15px 0; */
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 15px
+}
+
+.modal-input{
+    padding: 8px;
+    height: 40px;
+    width: 100%;
+}
+
+.pay-btn  {
+    background-color: #009688;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    float: none;
+    border: none;
+}
+
+.close-bottom-btn{
+    margin: 16px 0;
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+}
+
+.close-bottom-btn:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-info i {
+    width: 25px;
+}
+
+.form-control {
+    font-size: 15px;
+    padding: 8px;
+    height: 40px;
+    border: 1px solid #ccc;
+}
+
+.contact-email {
+    width: 100%;
 
 }
 
-.modal-footer{
-
+.form-submit {
+    float: right;
+    padding: 8px 16px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    border: none;
 }
 
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

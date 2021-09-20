@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
     <link rel="stylesheet" href="./asset/font/FortAwesome-Font-Awesome-7d3d774/css/all.css">
+    <!-- <script src="./asset/js/main.js"></script> -->
     <!-- <script src="https://kit.fontawesome.com/374fbc9555.js" crossorigin="anonymous"></script> -->
     <title>Document</title>
 </head>
@@ -78,7 +80,7 @@
                                 <h2 class="order-heading">New York</h2>
                                 <h3 class="order-sub-heading">Fri 27 Nov 2016</h3>
                                 <p class="order-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <input type="button" class="order-btn" value="Buy Tickets">
+                                <button class="order-btn js-buy-ticket" >Buy Tickets</button>
                             </div>
                         </div>
                         <div class="ticket-order">
@@ -89,7 +91,7 @@
                                 <h2 class="order-heading">New York</h2>
                                 <h3 class="order-sub-heading">Fri 28 Nov 2016</h3>
                                 <p class="order-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <input type="button" class="order-btn" value="Buy Tickets">
+                                <button class="order-btn js-buy-ticket" >Buy Tickets</button>
                             </div>
                         </div>
                         <div class="ticket-order">
@@ -100,7 +102,7 @@
                                 <h2 class="order-heading">New York</h2>
                                 <h3 class="order-sub-heading">Fri 29 Nov 2016</h3>
                                 <p class="order-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <input type="button" class="order-btn" value="Buy Tickets">
+                                <button class="order-btn js-buy-ticket" >Buy Tickets</button>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -111,27 +113,105 @@
             <div class="content-section">
                 <h2 class="section-heading">CONTACT</h2>
                 <p class="section-sub-heading">Fan? Drop a note!</p>
+
+                <div class="row">
+                    <div class="col col-half contact-info">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Chicago, US
+                        </p>
+                        <p>
+                            <i class="fas fa-phone-alt"></i>
+                            Phone: +00 151515
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            Email: mail@mail.com
+                        </p>
+                    </div>
+                    <div class="col col-half contact-mesage">
+                       <form action="">
+                           <div class="row">
+                                 <div class="col col-half ">
+                                    <input type="text" placeholder="Name" class="form-control">
+                                 </div>
+                                <div class="col col-half ">
+                                    <input type="email" placeholder="Email" class="contac-email form-control">
+                                </div>
+                           </div>
+                           <div class="row">
+                            <div class="col col-full mt-8">
+                                <input type="text" placeholder="Message" class="form-control">
+                            </div>
+                           </div>
+                           <input type="submit" value="SEND" class="form-submit mt-16 mbt-16">
+                       </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="footer">
-            <!-- Modal Book Ticket -->
-         <div id="ticketModal">
-             <div class="modal-container">
-                 <div class="close-top-btn">
-
-                 </div>
-                 <header class="modal-header">
-                    <i class="fas fa-suitcase"></i> Tickets
-                 </header>
-             </div>
-                <div class="modal-content">
-                    
-                </div>
-                <div class="modal-footer">
-
-                </div>
-         </div>   
-        </div>
+         
     </div>
+       <!-- Modal Book Ticket -->
+       <div class="modal js-modal"">
+        <div class="modal-container js-modal-cobtainer">
+            <div class="close-top-btn js-close-top-btn">
+               <i class="fas fa-times"></i>
+            </div>
+            <header class="modal-header">
+               <i class="fas fa-suitcase"></i> Tickets
+            </header>
+        
+           <div class="modal-content">
+               <label for="" class="modal-label">
+                <i class="fas fa-shopping-cart"></i>
+                Tickets, $15 per person
+               </label>
+               <input type="text" class="modal-input" placeholder="How many?">
+               <label for="" class="modal-label">
+                <i class="fas fa-user"></i>
+                Send to
+               </label>
+               <input type="email" class="modal-input" placeholder="Enter email">
+               <button class="pay-btn">
+                   PAY
+                   <i class="fas fa-check"></i>
+               </button>
+               <div class="close-bottom-btn">
+                   Close
+                   <i class="fas fa-times"></i>
+             </div>
+           </div>
+           
+           </div>
+    </div>   
+   </div>
+   <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalClose = document.querySelector('.js-close-top-btn')
+        const modalContainer = document.querySelector('.js-modal-cobtainer')
+        function showBuyTicket() {
+            modal.classList.add('open')
+        }
+
+        function hideBuyTicket() {
+            modal.classList.remove('open')
+        }
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket)
+        }
+        
+        modalClose.addEventListener('click', hideBuyTicket)
+
+        modal.addEventListener('click', hideBuyTicket)
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+
+   </script>
 </body>
 </html>
